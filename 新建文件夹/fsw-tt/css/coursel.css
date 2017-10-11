@@ -1,0 +1,77 @@
+
+
+/*轮播图*/
+.coursel{
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    border:4px solid black;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.print img {
+    width: 1200px;
+    height: 400px;
+    display: none;
+}
+.current{
+    display: block;
+}
+.print .current{
+    display: block;
+}
+
+.btn{
+    display: none;
+}
+
+.leftbtn{
+    width: 40px;
+    line-height: 60px;
+    background-color: black;
+    opacity: 0.4;
+    border-radius: 0 10px 10px 0;
+    text-align: center;
+    position: absolute;
+    top: 145px;
+    left: 0px;
+    color: white;
+    cursor:pointer;
+}
+.rightbtn{
+    width: 40px;
+    line-height: 60px;
+    background-color: black;
+    opacity: 0.6;
+    border-radius:10px 0 0 10px ;
+    text-align: center;
+    position: absolute;
+    top:145px;
+    right: 0px;
+    color: white;
+    cursor:pointer;
+}
+
+.circle{
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    left: 400px;
+    top: 360px;
+
+    display: flex;
+    justify-content: space-between;
+}
+ .circle li{
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 50%;
+    float: left;
+    margin: 0 15px;
+}
+ .circle .current{
+    background-color: red;
+}

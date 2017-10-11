@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索商品</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/commed.css">
+    <link rel="stylesheet" href="css/search.css">
+
+    <script src="js/myajax.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-container-1">
+        <div class="header-top">
+            <div class="header-top-left">
+                <a href="index.html">赶京东 超淘宝 横扫亚马逊</a>
+            </div>
+            <div class="header-top-right">
+                <a href="login.html" name="login" class="login">登录</a>
+                <a href="register.html" name="register" class="register">注册</a>
+                <a href="#" name="username" class="username">qwerasdf</a>
+                <a href="javascript:localStorage.clear(); location.reload();" class="logout">退出</a>
+                <a href="cart.html">购物车</a>
+                <a href="order.html">我的订单</a>
+                <a href="#">消息</a>
+                <a href="#">我的积分</a>
+                <script>
+                    var oRegister=document.querySelector(".register");
+                    var oLogin=document.querySelector(".login");
+                    var oUsername=document.querySelector("a[name=username]");
+                    var oLogout=document.querySelector(".logout");
+                    if(localStorage.username){
+                        oLogin.innerText=localStorage.username;
+                        oRegister.innerHTML="";
+                        oUsername.innerHTML="";
+                        oUsername.style.display="inline";
+                        oLogout.style.display="inline";
+                    }else{
+                        oRegister.style.display="inline";
+                        oLogin.style.display="inline";
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="header-container-2">
+        <div class="header-center">
+            <div class="header-center-left">
+                <h1>享购</h1>
+                <p><span>這個商城有點吊</span></p>
+            </div>
+            <div class="header-center-center">
+                <div class="header-center-center-sousuo">
+                    <input id="search" type="text" placeholder="请输入要搜索的内容">
+                    <button class="sousuo"><a href="#">搜索</a></button>
+                    <script>
+                        var oSearch = document.querySelector("#search");
+                        var oSousuo=document.querySelector(".sousuo");
+                        oSousuo.onclick = function() {
+                            location.href = 'search.html?search_text='+oSearch.value;
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="header-center-right">
+                <img src="image/tubiao.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="header-container-3">
+        <ul id="cat" class="header-bottom"></ul>
+        <script>
+            var oCat = document.querySelector('#cat');
+            myajax.get('http://h6.duchengjiu.top/shop/api_cat.php', {}, function(error, responseText){
+                var json = JSON.parse(responseText);
+                var data = json.data;
+                for (var i = 0; i < data.length; i++) {
+                    var obj = data[i];
+                    oCat.innerHTML += `<li><a href="index.html?cat_id=${obj.cat_id}">${obj.cat_name}</a></li>`;
+                }
+            });
+
+            //让导航栏 停在顶部
+            var oNavigation=document.querySelector(".header-container-3");
+            window.onscroll = function(e) {
+                var nowTop = document.documentElement.scrollTop || document.body.scrollTop;
+                if(nowTop >= 200) {
+                    oNavigation.style.position = 'fixed';
+                    oNavigation.style.top = 0;
+                }else {
+                    oNavigation.style.position = 'relative';
+                }
+            };
+
+        </script>
+    </div>
+</header>
+
+<section>
+    <main>
+        <div class="hots">
+            <h2>搜索商品</h2>
+        </div>
+        <ul id="hot-goods">
+        </ul>
+    </main>
+    <script>
+        var search_text = getQueryString('search_text');
+        //name abc
+        //123
+        var oGoods = document.querySelector('#hot-goods');
+        myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',
+            {search_text: search_text},
+            function(err,responseText){
+                var json = JSON.parse(responseText);
+                console.log(json);
+                var data = json.data;
+                //如果没数据要给出提示
+                if (data.length === 0) {
+                    oGoods.innerHTML = "<b>未搜索到商品</b> <span id='second'>5</span><b>秒后跳回首页</b>";
+                    var oSecond = oGoods.querySelector('#second');
+                    var timer = setInterval(() => {
+                            var second = parseInt(oSecond.innerText);
+                    oSecond.innerText = --second;
+                }, 1000);
+                    setTimeout(() => {
+                        clearInterval(timer);
+                    location.href = 'index.html';
+                }, 5000);
+                    return;
+                }
+                for (var i = 0; i < data.length; i++) {
+                    var obj = data[i];
+                    oGoods.innerHTML += `<li class="goods"><a href="goods.html?goods_id=${obj.goods_id}">
+          <div><img src="${obj.goods_thumb}" /></div>
+          <div>${obj.goods_name}</div>
+          <div class="price">${obj.price}</div></a>
+        </li>`;
+                }
+            });
+    </script>
+</section>
+
+<footer>
+    <div class="footer-nav">
+        <div class="footer-nav-w">
+            <div class="footer-w-left">
+                <ul class="footer-left-left">
+                    <li class="footer-left-left-1">关于我们</li>
+                    <li>关于我们</li>
+                    <li>关于我们</li>
+                    <li>关于我们</li>
+                    <li>关于我们</li>
+                </ul>
+                <ul class="footer-left-right">
+                    <li class="footer-left-right-1">全免费送</li>
+                    <li>全免费送</li>
+                    <li>全免费送</li>
+                    <li>全免费送</li>
+                    <li>全免费送</li>
+                </ul>
+            </div>
+            <div class="footer-w-center">
+                <div class="footer-center-top"><b>手机送一送</b></div>
+                <div class="footer-center-bottom">
+                    <img src="image/mayu4.jpg" style="width:120px;height:170px;">
+                </div>
+            </div>
+            <div class="footer-w-right">
+                <ul class="footer-right-left">
+                    <li class="footer-right-left-1">优惠活动</li>
+                    <li>优惠活动</li>
+                    <li>优惠活动</li>
+                    <li>优惠活动</li>
+                    <li>优惠活动</li>
+                </ul>
+                <ul class="footer-right-right">
+                    <li class="footer-right-right-1">就是大气</li>
+                    <li>就是大气</li>
+                    <li>就是大气</li>
+                    <li>就是大气</li>
+                    <li>就是大气</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nbv">
+        <div class="footer-nbv-top">
+            <ul class="footer-nbv-top-1">
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+            </ul>
+            <ul class="footer-nbv-top-2">
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+                <li>图图放送</li>
+            </ul>
+        </div>
+        <div class="footer-nbv-bottom">
+            <div class="footer-nbv-bootm-1">
+                <p><b>Copyright @ 2010-2017 ETON.COM 版权所有</b></p><p><b>增值电信业务经营许可证：黑b2-20080224</b></p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
+</body>
+</html>

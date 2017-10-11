@@ -1,0 +1,95 @@
+
+
+
+
+
+main{
+    width: 1200px;
+    margin: auto;
+}
+.hots{
+    width: 1200px;
+    height: 110px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.hots h2{
+    width: 230px;
+    margin: 0 auto;
+    font-size: 50px;
+    color: white;
+    line-height: 110px;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+}
+#hot-goods{
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#hot-goods b{
+    font-size: 26px;
+    color: grey;
+}
+#second{
+    font-size: 30px;
+    color: blue;
+}
+#hot-goods li{
+    overflow: hidden;
+    width: 360px;
+    height: 560px;
+    background-color:green;
+    border:4px solid black;
+    box-sizing: border-box;
+    float: left;
+    margin: 10px 10px 0 10px;
+}
+#hot-goods li:hover{
+    border:4px solid red;
+    box-sizing: border-box;
+}
+#hot-goods li img{
+    width: 360px;
+    height: 360px;
+}
+#hot-goods li .name{
+    font-size: 20px;
+    color: white;
+}
+#hot-goods li .price{
+    width: 100%;
+    height: 20px;
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

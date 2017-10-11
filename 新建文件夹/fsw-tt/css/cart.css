@@ -1,0 +1,135 @@
+#otable{
+    width: 100%;
+}
+.cart-header{
+    width: 1200px;
+    height: 40px;
+    background-color: gray;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+.cart-header li{
+    width: 170px;
+    line-height: 40px;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+.cart-section{
+    width: 1200px;
+    height: 170px;
+    background-color: gray;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+.cart-section li{
+    width: 170px;
+    height: 170px;
+}
+.cart-id{
+    font-size: 20px;
+    line-height: 170px;
+    color: whitesmoke;
+    text-align: center;
+}
+.cart-thumb img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+.cart-name{
+    height: 100px;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    color: whitesmoke;
+}
+.cart-num input{
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    border: 2px solid green;
+    border-radius: 6px;
+    margin-top: 70px;
+    margin-left: 25px;
+}
+.cart-price{
+    font-size: 20px;
+    line-height: 170px;
+    color: whitesmoke;
+    text-align: center;
+}
+.cart-sum{
+    font-size: 20px;
+    line-height: 170px;
+    color: whitesmoke;
+    text-align: center;
+}
+.cart-delete input{
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid green;
+    background-color: green;
+    border-radius: 6px;
+    margin-top: 70px;
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.cart-footer{
+    width: 1200px;
+    line-height: 40px;
+    background-color: gray;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 22px;
+    color: white;
+    display: flex;
+}
+.cart-footer span{
+    width: 794px;
+    line-height: 40px;
+    font-size: 26px;
+    color: white;
+}
+.cart-footer a{
+    width: 170px;
+    height: 40px;
+    color:red;
+    background-color: black;
+    border-radius: 6px;
+    text-align: center;
+}
+.cart-footer input{
+    width: 120px;
+    height: 36px;
+    background-color: green;
+    border: 2px solid green;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 2px;
+    margin-left: 24px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+

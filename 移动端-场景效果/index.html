@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /*
+          .swiper-container {
+            width: 600px;
+            height: 300px;
+            background-color: red;
+          }
+          */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+            font-size: 15px;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .swiper-slide-1{
+            background: url("images/bg1.jpg") no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            position: relative;
+        }
+        .img1-1{
+            width: 100%;
+            position: absolute;
+            left:0;
+            top:30%;
+        }
+        .img1-2{
+            width: 80%;
+            position: absolute;
+            left: 10%;
+            top:42%;
+        }
+        .img1-3{
+            position: absolute;
+            left: 42%;
+            top: 90%;
+        }
+        /*头部*/
+        .slide-1-header{
+            width: 100%;
+        }
+        .slide-1-header-center{
+            width: 204px;
+            height: 130px;
+            margin: auto;
+            background: url("images/logo.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        @media screen and (max-width:450px) {
+            .slide-1-header-center{
+                background-size: 80% 80%;
+            }
+        }
+
+        .swiper-slide-2{
+            background: url("images/bg2.jpg")no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            position: relative;
+        }
+        .img2-1{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 10%;
+        }
+        .img2-2{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 43%;
+        }
+        .img2-3{
+            position: absolute;
+            left: 42%;
+            top: 90%;
+        }
+        /*头部*/
+        .slide-2-header{
+            width: 100%;
+            position: absolute;
+            top: 20px;
+        }
+        .slide-2-header-center{
+            width: 260px;
+            height: 50px;
+            margin: auto;
+            background: url("images/game-tese (1).png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        @media screen and (max-width:450px) {
+            .slide-1-header-center{
+                background-size: 80% 80%;
+            }
+        }
+
+        .swiper-slide-3{
+            background: url("images/bg2.jpg")no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            position: relative;
+        }
+        .img3-1{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 10%;
+        }
+        .img3-2{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 43%;
+        }
+        .img3-3{
+            position: absolute;
+            left: 42%;
+            top: 90%;
+        }
+        /*头部*/
+        .slide-3-header{
+            width: 100%;
+            position: absolute;
+            top: 20px;
+        }
+        .slide-3-header-center{
+            width: 260px;
+            height: 50px;
+            margin: auto;
+            background: url("images/game-tese (1).png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        @media screen and (max-width:450px) {
+            .slide-1-header-center{
+                background-size: 80% 80%;
+            }
+        }
+
+
+        .swiper-slide-4{
+            background: url("images/bg2.jpg")no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            position: relative;
+        }
+        .img4-1{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 10%;
+        }
+        .img4-2{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 43%;
+        }
+        .img4-3{
+            position: absolute;
+            left: 42%;
+            top: 90%;
+        }
+        /*头部*/
+        .slide-4-header{
+            width: 100%;
+            position: absolute;
+            top: 20px;
+        }
+        .slide-4-header-center{
+            width: 260px;
+            height: 50px;
+            margin: auto;
+            background: url("images/game-tese (1).png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        @media screen and (max-width:450px) {
+            .slide-1-header-center{
+                background-size: 80% 80%;
+            }
+        }
+
+
+        .swiper-slide-5{
+            background: url("images/bg2.jpg")no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            position: relative;
+        }
+        .img5-1{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 10%;
+        }
+        .img5-2{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 43%;
+        }
+        .img5-3{
+            position: absolute;
+            left: 42%;
+            top: 90%;
+        }
+        /*头部*/
+        .slide-5-header{
+            width: 100%;
+            position: absolute;
+            top: 20px;
+        }
+        .slide-5-header-center{
+            width: 260px;
+            height: 50px;
+            margin: auto;
+            background: url("images/game-tese (1).png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        @media screen and (max-width:450px) {
+            .slide-1-header-center{
+                background-size: 80% 80%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- div.swiper-container>div.swiper-wrapper>div.swiper-slide*5{$} -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="swiper-slide-1">
+                <div class="slide-1-header">
+                    <div class="slide-1-header-center"></div>
+                </div>
+                <img class="ani img1-1"
+                     swiper-animate-effect="fadeInUp"
+                     swiper-animate-duration="3s"
+                     swiper-animate-delay="1s"
+                     src="images/sec1-humen.png" alt="">
+                <img class="ani img1-2"
+                     swiper-animate-effect="fadeInDown"
+                     swiper-animate-duration="2s"
+                     swiper-animate-delay="0s"
+                     src="images/nb.png" alt="">
+                <img class="ani infinite img1-3"
+                     swiper-animate-effect="bounce"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/aroow.png" alt="">
+            </div>
+        </div>
+       <div class="swiper-slide">
+           <div class="swiper-slide-2">
+               <div class="slide-2-header">
+                   <div class="slide-2-header-center"></div>
+               </div>
+
+               <img class="ani img2-1"
+                    swiper-animate-effect="fadeInLeft"
+                    swiper-animate-duration="1s"
+                    swiper-animate-delay="0s"
+                    src="images/tese1l.png" alt="">
+               <img class="ani img2-2"
+                    swiper-animate-effect="fadeInRight"
+                    swiper-animate-duration="1s"
+                    swiper-animate-delay="0s"
+                    src="images/tese1r.png" alt="">
+               <img class="ani infinite img2-3"
+                    swiper-animate-effect="bounce"
+                    swiper-animate-duration="1s"
+                    swiper-animate-delay="0s"
+                    src="images/aroow.png" alt="">
+           </div>
+       </div>
+        <div class="swiper-slide">
+            <div class="swiper-slide-3">
+                <div class="slide-3-header">
+                    <div class="slide-3-header-center"></div>
+                </div>
+
+                <img class="ani img3-1"
+                     swiper-animate-effect="fadeInLeft"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese2l.png" alt="">
+                <img class="ani img3-2"
+                     swiper-animate-effect="fadeInRight"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese2r.png" alt="">
+                <img class="ani infinite img3-3"
+                     swiper-animate-effect="bounce"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/aroow.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-slide-4">
+                <div class="slide-4-header">
+                    <div class="slide-4-header-center"></div>
+                </div>
+
+                <img class="ani img4-1"
+                     swiper-animate-effect="fadeInLeft"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese3l.png" alt="">
+                <img class="ani img4-2"
+                     swiper-animate-effect="fadeInRight"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese3r.png" alt="">
+                <img class="ani infinite img4-3"
+                     swiper-animate-effect="bounce"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/aroow.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-slide-5">
+                <div class="slide-5-header">
+                    <div class="slide-5-header-center"></div>
+                </div>
+
+                <img class="ani img5-1"
+                     swiper-animate-effect="fadeInLeft"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese4l.png" alt="">
+                <img class="ani img4-2"
+                     swiper-animate-effect="fadeInRight"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/tese4r.png" alt="">
+                <img class="ani infinite img5-3"
+                     swiper-animate-effect="bounce"
+                     swiper-animate-duration="1s"
+                     swiper-animate-delay="0s"
+                     src="images/aroow.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="js/swiper-3.4.2.min.js" charset="utf-8"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: false,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        mousewheelControl: true,
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    });
+    var index=0;
+    var Ani=document.querySelector(".ani");
+    Ani.onclick=function () {
+        index++;
+        if(index>=5){
+            index=0;
+        }
+    }
+</script>
+</body>
+</html>
